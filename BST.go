@@ -386,7 +386,7 @@ func main() {
 	t := &treeNode{Value: 8}
 	//t.print(0)
 	values := []int{3, 10, 1, 6, 4, 7, 14, 13}
-	for _,v := range values {
+	for _, v := range values {
 		t.Insert(v)
 	}
 
@@ -395,9 +395,9 @@ func main() {
 	//fmt.Println(t.nodeSearch(12))
 	//fmt.Println(t.FindPredecessor(8))
 	//fmt.Println(t.FindSuccessor(5))
-	//t.DeleteNode(t, 6)
+	t.DeleteNode(t, 8)
 	t.print(0)
-	t.printLeftView(t)
+	//t.printLeftView(t)
 	//leaf:= make([]int,0,10)
 	//t.GetHeightLeaves(0,&leaf)
 	//fmt.Println(leaf)

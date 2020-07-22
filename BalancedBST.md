@@ -39,9 +39,9 @@ A new element is inserted to an AVL tree in the same logic as to a BST. However,
 each node is updated and checked after insertion. The tree is said to be imbalanced if the balance factor of any node is 
 other than 0, 1 or -1. In this case, suitable rotation operation is used to re-balance the tree. 
 
-It can be shown that a height-balanced tree with n nodes has height O(log2(n)). 
+It can be shown that a height-balanced tree with n nodes has height O(log(n)). 
 Since the cost of our algorithms is proportional to the height of the tree, each operation 
-(lookup, insertion or deletion) will take time O(log2(n)) in the worst case.
+(lookup, insertion or deletion) will take time O(log(n)) in the worst case.
 
 **Example - Construct an AVL tree by inserting numbers from 1 to 8** 
 
@@ -221,9 +221,11 @@ func (t *AVLTree) Insert(data int) {
 	}
 }
 
-/* The root node has no parent, to be unable to use node's Rebalance method above
+/* -----------------------------------------------------------------------------------
+The root node has no parent, to be unable to use node's Rebalance method above
 a fake parent node is created. This node stores value -1, and root node is its either 
- left child or right child */
+ left child or right child 
+--------------------------------------------------------------------------------------*/
 
 func (t *AVLTree) rebalance() {
 	rootParent := &Node{Left: t.Root, Value: -1}

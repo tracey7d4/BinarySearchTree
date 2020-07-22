@@ -209,7 +209,8 @@ Return: 8 3 10 1 6 14 4 7 13
 Now let's play a bit with our BST.
 
 **Get Height**
-Helper functions: GetHeightLeaves and max
+
+Helper functions: `GetHeightLeaves` and `max`
 ```go
 func (t *treeNode) GetHeight(leaves []int) int {
 	return max(leaves)
@@ -257,12 +258,17 @@ func (t *treeNode) print(height int) {
 	t.Left.print(height + 1)
 }
 ```
+That is what will be displayed.
+
+![Print tree](image/PrintTree.png)
+
 
 **Get all values with the same level from BST**
 
-   While the function BreadthFirstTraversal returns an array of tree's values by levels, the GetLevel function
- Traversal returns a map, where map's keys are tree's levels, and map's values are arrays of all the 
- nodes' value on each level.
+   While the function `BreadthFirstTraversal` returns an array of tree's values by levels, the `GetLevel` function
+  returns a map, where map's keys are tree's levels, and map's values are arrays of all the 
+ nodes' values on each level.
+ 
 ```go
 type levelValue map[int][]int
 func (t *treeNode) GetLevel(level int, m *levelValue) levelValue {
@@ -479,7 +485,21 @@ func (t *treeNode) transplant(n1, n2 *treeNode) {
 	}
 }
 ```
+For example, deleting a leaf node - Node 1
 
+![Print tree](image/DeleteNode1.png)
+
+Deleting a half node - Node 14
+
+![Print tree](image/DeleteNode14.png)
+
+Deleting a full node - Node 6
+
+![Print tree](image/DeleteNode6.png)
+
+Deleting root node - Node 8
+
+![Print tree](image/DeleteNode8.png)
 
 
 ### References
